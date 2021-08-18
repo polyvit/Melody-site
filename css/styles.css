@@ -54,3 +54,15 @@ body {
     line-height: 20px;
     text-decoration: none;
 }
+.main {
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 54px;
+}
+.home-image path {
+    opacity: 0;
+    cursor: pointer;
+}
+.home-image path:hover {
+    opacity: 1;
+}
