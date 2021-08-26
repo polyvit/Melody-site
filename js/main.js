@@ -3,6 +3,9 @@ $(document).ready(function () {
     var counterUp = $(".counter-up")
     var counterDown = $(".counter-down")
     var floorPath = $(".home-image path")
+    var modal = $('.modal')
+    var modalCloseButton = $('.modal-close-button')
+    var viewFlatsButton = $('.view-flats')
 
     // Наведение мышкой на этаж
     floorPath.on("mouseover", function () {
@@ -10,6 +13,11 @@ $(document).ready(function () {
         currentFloor = $(this).attr("data-floor");
         $(".counter").text(currentFloor)
     })
+
+    // Открытие и закрытие модального окна
+    modalCloseButton.on('click', toggleModal)
+    floorPath.on('click', toggleModal)
+    viewFlatsButton.on('click', toggleModal)
 
     //Изменение этажа при нажатии кнопок
     counterUp.on("click", function() {
@@ -32,4 +40,8 @@ $(document).ready(function () {
             $(`[data-floor=${usCurrentFloor}]`).toggleClass("current-floor");
         }
     })
+
+    function toggleModal () {
+        modal.toggleClass('is-open');
+    }
 })
